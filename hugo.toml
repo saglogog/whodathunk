@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://github.com/saglogog/whodathunk'
 languageCode = 'en-us'
 title = 'WhoDaThunk'
 theme = 'whodathunk-theme'

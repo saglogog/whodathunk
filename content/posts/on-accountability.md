@@ -1,6 +1,6 @@
 +++
 date = '2025-11-27T14:51:15+02:00'
-draft = true
+draft = false
 title = 'Accountability'
 description = 'Relationships and accountability in large population centers.'
 summary = 'Relationships and accountability in large population centers.'

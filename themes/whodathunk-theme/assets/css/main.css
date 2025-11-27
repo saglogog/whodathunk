@@ -1,0 +1,205 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+body {
+    color: #001514;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    line-height: 1.5;
+    margin: 0.7rem;
+    /* max-width: fit-content; */
+    text-align: justify;
+    background-color: #f1eeea;
+}
+
+h3 {
+    margin-top: -0.3rem;
+    margin-bottom: -0.7rem;
+}
+
+/*https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables*/
+table {
+    table-layout: fixed;
+    /*width: 90%;*/
+    margin: 10px auto;
+    border-collapse: collapse;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+th,
+td {
+    border: 0.1rem solid;
+    vertical-align: top;
+    padding: 0.3em;
+    /*align-items: left;*/
+    border-collapse: collapse;
+}
+
+header {
+    font-family: "Source Sans 3";
+    border: 1px solid #011627;
+    box-shadow: 0.3rem 0.7rem;
+    background-color: #011627;
+    color: #e64b38;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1.title {
+    margin-left: 1em;
+}
+
+nav.main {
+    padding-right: 2em;
+}
+
+ul.mainMenu {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+li.mainMenu {
+    display: block;
+}
+
+a.mainMenu {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a.mainMenu:hover {
+    color: #f1eeea;
+}
+
+.hero-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0.3rem 0.7rem #e64b38;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    justify-content: right;
+    text-align: center;
+    box-shadow: 0rem 0.7rem #011627;
+
+    font-size: 1.4rem;
+    font-family: "Courier New";
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    align-content: space-around;
+}
+
+.hero-text {
+    color: #011627;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Courier New";
+    text-shadow: 0.3rem 0.7rem #e64b38;
+    margin: 2.6rem;
+}
+
+main {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.articles-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.article-card {
+    border-radius: 5% 5%;
+    border: 0.3rem solid #011627;
+    box-shadow: 0 1rem 1rem 0 #011627;
+    padding: 1rem;
+    transition: 0.3s;
+    width: 28%;
+}
+
+.article-card:hover {
+    box-shadow: 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.article-card img {
+    border-radius: 5% 5%;
+}
+
+.article-card .container {
+    padding: 0.2rem 0.5rem;
+}
+
+.article-page-container {
+    margin-left: 2rem;
+    /*margin-right: 2rem;*/
+    display: flex;
+    gap: 2rem;
+}
+
+.article-page-container > article {
+    flex-grow: 1;
+    width: 70%;
+}
+
+.toc {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2%;
+    height: fit-content;
+    width: 25%;
+    position: sticky;
+    border: 0.2rem solid #011627;
+    box-shadow: 0.3rem 0.7rem #e64b38;
+}
+
+.toc li {
+    display: block;
+    margin-bottom: 0.3rem;
+    margin-right: 0.5rem;
+    margin-left: -1rem;
+}
+
+.toc p {
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: "Courier New";
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: -0.5rem;
+    margin-top: 0.5rem;
+}
+
+footer {
+    border-top: 1px solid #222;
+    margin-top: 1rem;
+    background-color: #f1eeea;
+    background-color: #011627;
+    color: #e64b38;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0.3rem 0.7rem #e64b38;
+    margin-bottom: 1.4rem;
+}
+
+p.footer {
+    padding-bottom: 0.1em;
+}
+
+a {
+    color: #e64b38;
+}
+
+a:hover {
+    color: #011627;
+}

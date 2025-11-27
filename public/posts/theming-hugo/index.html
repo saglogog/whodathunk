@@ -1,0 +1,162 @@
+<!doctype html>
+<html
+    lang="en-us"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+    Theming this website | WhoDaThunk
+</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+ 
+      <script src="/js/main.js"></script>
+
+
+    </head>
+    <body>
+        <header><h1 class="title">WhoDaThunk</h1>
+
+  <nav class="main">
+    <ul class="mainMenu">
+    <li class="mainMenu">
+      <a class="mainMenu" href="/">Home</a>
+    </li>
+    <li class="mainMenu">
+      <a class="mainMenu" href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+</header>
+        <div><div class="hero-container">
+    <p class="hero-text">A better life starts in Knowledge.</p>
+</div>
+</div>
+        <main>
+
+<div class="article-page-container">
+    <article>
+        <h1>Theming this website</h1>
+
+         
+        <time datetime="2025-10-18T10:55:49&#43;03:00">October 18, 2025</time>
+
+        <ul>
+<li>
+<p>CSS location: In this case, I just added stuff in main.css in <em>themes\whodathunk-theme\assets\css\<strong>main.css</strong></em>.</p>
+</li>
+<li>
+<p>Fonts: Used google&rsquo;s source sans 3 in the header (import in head and call it in css class like <em>font-family: &lsquo;Source Sans 3&rsquo;;</em>), Georgia in the body and Courier New in Hero and website intro.</p>
+</li>
+<li>
+<p>Colors/Palette: Trying these out for a spin:</p>
+<ul>
+<li>Idea 1:
+<ul>
+<li>Accent0(?): #f1eeea</li>
+<li>Links(?): #0F8B8D</li>
+<li>Letters(?): #00151</li>
+<li>Accent1(?): #F58A07</li>
+<li>Accent2(?): #006494</li>
+<li>Accent3(?): #053225</li>
+<li>Accent4(?): #5F758E</li>
+</ul>
+</li>
+<li>Idea 2:
+<figure class="ma0 w-75"><img src="/posts/theming-hugo/palette-sample.png"
+            alt="An idea for a palette" width="500"><figcaption>
+              <p>An idea for a palette</p>
+            </figcaption>
+        </figure>
+
+&ndash; also use these (#f2f0e, #ebeadf) and alternate the use the red as bg with white letters</li>
+<li>Idea 3 (<strong>current</strong>): mostly using 3 colors:
+<ul>
+<li>#dc533d,</li>
+<li>#051627 and</li>
+<li>#f1eeea.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<details>
+  <summary>See what gemini says</summary>
+  <p>Hugo offers a few primary locations for your <strong>CSS</strong> files, depending on whether you&rsquo;re working within a theme or adding custom styles to your site:</p>
+<h3 id="standard-css-locations">Standard CSS Locations</h3>
+<ol>
+<li>
+<p><strong><code>/assets</code> Directory (Recommended for new sites and themes):</strong></p>
+<ul>
+<li>This is the modern location for CSS, Sass, JavaScript, and other resources that you want to process using Hugo&rsquo;s <strong>Asset Pipelines</strong> (Hugo Pipes).</li>
+<li>The compiled or linked CSS often ends up in the <code>/public/resources</code> directory when the site is built.</li>
+<li>For a new Hugo site, you&rsquo;d typically place your main stylesheet in a path like <code>assets/css/style.css</code> (or <code>assets/sass/style.scss</code> if using Sass).</li>
+<li>If you&rsquo;re creating or modifying a theme, the CSS would go in the theme&rsquo;s own <code>assets</code> directory: <code>themes/&lt;YOUR_THEME_NAME&gt;/assets/css/style.css</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/static</code> Directory (For files to be copied directly):</strong></p>
+<ul>
+<li>Any files in the root <code>/static</code> directory are copied directly to the root of the <code>/public</code> directory when the site is built, preserving the folder structure.</li>
+<li>If you place CSS here, e.g., in <code>static/css/custom.css</code>, it will be available at <code>/css/custom.css</code> on your built site.</li>
+<li>This location is often used for files that don&rsquo;t need processing, like <code>favicon.ico</code>, but it can still hold CSS, especially for older themes or simple projects.</li>
+</ul>
+</li>
+</ol>
+<h3 id="referencing-the-css-in-your-templates">Referencing the CSS in Your Templates</h3>
+<p>Regardless of where you place the CSS, you must link it in your HTML templates, usually within the <code>&lt;head&gt;</code> tag of a file like <code>layouts/partials/head.html</code> or <code>layouts/_default/baseof.html</code>.</p>
+<ul>
+<li>
+<p><strong>For files in <code>/assets</code>:</strong> You use Hugo&rsquo;s built-in functions to process and reference the asset. For a file like <code>assets/css/style.css</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ $style := resources.Get &#34;css/style.css&#34; | resources.Minify | resources.Fingerprint }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.RelPermalink }}&#34;</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p><strong>For files in <code>/static</code>:</strong> You use a standard HTML link tag with the path starting from the root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/custom.css&#34;</span>&gt;
+</span></span></code></pre></div><p>This example uses Hugo Pipes to retrieve, minify, and fingerprint the file for better performance and cache-busting.</p>
+</li>
+</ul>
+<p>For an introduction to setting up a custom theme with Hugo, you can watch this video: <a href="https://www.youtube.com/watch?v=w6_cQsTwd3Q">Hugo Blog Tutorial: Setting up a custom theme</a>.</p>
+</details>
+
+<p>[&hellip;]</p>
+ 
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/yorgos/">Yorgos</a></li>
+    </ul>
+  </div>
+
+    </article>
+    
+    <div class="toc">
+        <p>Table of contents</p>
+        <nav id="TableOfContents"></nav>
+    </div>
+    
+</div>
+
+</main>
+        <footer><p class="footer">
+    Copyright <b>ME</b> 2025. All rights reserved. Built with&nbsp;
+</p>
+<p></p>
+<p style="color: #f54d89">H</p>
+<p style="color: #3892c9">U</p>
+<p style="color: #4cb891">G</p>
+<p style="color: #e5ba57">O</p>
+<p>&nbsp;SSG.</p>
+</footer>
+    </body>
+</html>

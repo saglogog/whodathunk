@@ -1,0 +1,224 @@
+<!doctype html>
+<html
+    lang="en-us"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+    My First Post | WhoDaThunk
+</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+ 
+      <script src="/js/main.js"></script>
+
+
+    </head>
+    <body>
+        <header><h1 class="title">WhoDaThunk</h1>
+
+  <nav class="main">
+    <ul class="mainMenu">
+    <li class="mainMenu">
+      <a class="mainMenu" href="/">Home</a>
+    </li>
+    <li class="mainMenu">
+      <a class="mainMenu" href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+</header>
+        <div><div class="hero-container">
+    <p class="hero-text">A better life starts in Knowledge.</p>
+</div>
+</div>
+        <main>
+
+<div class="article-page-container">
+    <article>
+        <h1>My First Post</h1>
+
+         
+        <time datetime="2025-10-18T15:08:49&#43;03:00">October 18, 2025</time>
+
+        <h2 id="1-job-requirements">1. Job requirements</h2>
+<p>This week they are making me sync the files from the old system to the new. The IT guy isn&rsquo;t helping me out. I <em>really</em> don&rsquo;t want to do this.</p>
+<p>I have to either:</p>
+<ol>
+<li>use a script I made and sync this stuff one by one or</li>
+<li>use a second PC and sync all the OneDrive content using it to an external, large enough drive and then sync the specific folders using FreeFileSync.</li>
+</ol>
+<p>You can find the script here at the end of the post. Jump to <a href="#script">script</a>.</p>
+<h2 id="2-the-grad-programme">2. The grad programme</h2>
+<p>I reaaally am not sure about this.</p>
+<h2 id="test-image">Test image</h2>
+<p>A test image follows.</p>
+
+<details>
+  <summary>See the image</summary>
+  <p><img src="drop-your-hardest-jjk-wallpaper-v0-jr7a37h6m0hc1.webp" alt="alt text"></p>
+</details>
+
+<h2 id="script">Script</h2>
+<p>This is a script I frankensteined from various stack overflow sources.</p>
+
+<details>
+  <summary>See the script</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;encoding/csv&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;io&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">CopyFile</span>(<span style="color:#a6e22e">src</span>, <span style="color:#a6e22e">dst</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>){
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sfi</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stat</span>(<span style="color:#a6e22e">src</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">sfi</span>.<span style="color:#a6e22e">Mode</span>().<span style="color:#a6e22e">IsRegular</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// cannot copy non-regular files (e.g., directories,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// symlinks, devices, etc.)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;CopyFile: non-regular source file %s (%q)&#34;</span>, <span style="color:#a6e22e">sfi</span>.<span style="color:#a6e22e">Name</span>(), <span style="color:#a6e22e">sfi</span>.<span style="color:#a6e22e">Mode</span>().<span style="color:#a6e22e">String</span>())
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dfi</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stat</span>(<span style="color:#a6e22e">dst</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">IsNotExist</span>(<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// if !(dfi.Mode().IsRegular()) {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//     return fmt.Errorf(&#34;CopyFile: non-regular destination file %s (%q)&#34;, dfi.Name(), dfi.Mode().String())</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// }</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">SameFile</span>(<span style="color:#a6e22e">sfi</span>, <span style="color:#a6e22e">dfi</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">copyFileContents</span>(<span style="color:#a6e22e">src</span>, <span style="color:#a6e22e">dst</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">copyFileContents</span>(<span style="color:#a6e22e">src</span>, <span style="color:#a6e22e">dst</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#a6e22e">in</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">src</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">in</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">out</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Create</span>(<span style="color:#a6e22e">dst</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cerr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">cerr</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Copy</span>(<span style="color:#a6e22e">out</span>, <span style="color:#a6e22e">in</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">Sync</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">readCsvFile</span>(<span style="color:#a6e22e">filePath</span> <span style="color:#66d9ef">string</span>) [][]<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">filePath</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;Unable to read input file &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filePath</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">csvReader</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">csv</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">csvReader</span>.<span style="color:#a6e22e">Comma</span> = <span style="color:#e6db74">&#39;;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">records</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">csvReader</span>.<span style="color:#a6e22e">ReadAll</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;Unable to parse file as CSV for &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filePath</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">records</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// readCsvFile returns a string slice of slices ([][]string), CSV.ReadAll returns a slice of fields</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">records</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">readCsvFile</span>(<span style="color:#e6db74">&#34;./tbf3.csv&#34;</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">records</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">CopyFile</span>(<span style="color:#a6e22e">v</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">v</span>[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;CopyFile failed %[1]q in line %[2]d\n&#34;</span>, <span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;CopyFile succeeded in line %[1]d\n&#34;</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each record, make the copy from the record left side to the record right side</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// log all output</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// fmt.Println(records)</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// func main() {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//     fmt.Printf(&#34;Copying %s to %s\n&#34;, os.Args[1], os.Args[2])</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//     err := CopyFile(os.Args[1], os.Args[2])</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//     if err != nil {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//         fmt.Printf(&#34;CopyFile failed %q\n&#34;, err)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//     } else {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//         fmt.Printf(&#34;CopyFile succeeded\n&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//     }</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// }</span>
+</span></span></code></pre></div></details>
+
+ 
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/yorgos/">Yorgos</a></li>
+    </ul>
+  </div>
+
+    </article>
+    
+    <div class="toc">
+        <p>Table of contents</p>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-job-requirements">1. Job requirements</a></li>
+    <li><a href="#2-the-grad-programme">2. The grad programme</a></li>
+    <li><a href="#test-image">Test image</a></li>
+    <li><a href="#script">Script</a></li>
+  </ul>
+</nav>
+    </div>
+    
+</div>
+
+</main>
+        <footer><p class="footer">
+    Copyright <b>ME</b> 2025. All rights reserved. Built with&nbsp;
+</p>
+<p></p>
+<p style="color: #f54d89">H</p>
+<p style="color: #3892c9">U</p>
+<p style="color: #4cb891">G</p>
+<p style="color: #e5ba57">O</p>
+<p>&nbsp;SSG.</p>
+</footer>
+    </body>
+</html>

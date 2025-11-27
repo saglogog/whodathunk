@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="article-page-container">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }} {{ range .Pages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <!-- Added some conditionals: if there is a description, present it. Else, get a content summary. -->
+    {{ if .Description }} {{.Description}} {{ else }} {{.Summary}} {{end}} {{
+    end }}
+</div>
+{{ end }}

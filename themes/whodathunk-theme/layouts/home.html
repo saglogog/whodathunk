@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="welcome">{{ .Content }}</div>
+
+<div class="articles-container">
+    {{ range site.RegularPages }}
+    <div class="article-card">
+        <img src="article_preview.png" alt="Avatar" style="width: 100%" />
+        <div class="container">
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+            {{ .Summary }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,7 +1,7 @@
 +++
 date = '2025-11-27T02:59:34+02:00'
 draft = false
-title = '1. Financial Accounting - Part 1'
+title = 'Financial Accounting - Part 1'
 description = "Info collected on accounting while studying."
 summary = "Info collected on accounting while studying."
 slug = "financial-accounting-1"

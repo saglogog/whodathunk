@@ -161,6 +161,7 @@ main {
     position: sticky;
     border: 0.2rem solid #011627;
     box-shadow: 0.3rem 0.7rem #e64b38;
+    margin-top: 2rem;
 }
 
 .toc li {
@@ -168,6 +169,7 @@ main {
     margin-bottom: 0.3rem;
     margin-right: 0.5rem;
     margin-left: -1rem;
+    text-align: left;
 }
 
 .toc p {

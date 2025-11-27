@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on WhoDaThunk</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1313/whodathunk/</link>
     <description>Recent content in Home on WhoDaThunk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Nov 2025 14:51:15 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/whodathunk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Accountability</title>
-      <link>http://localhost:1313/posts/city-accountability/</link>
+      <link>http://localhost:1313/whodathunk/posts/city-accountability/</link>
       <pubDate>Thu, 27 Nov 2025 14:51:15 +0200</pubDate>
-      <guid>http://localhost:1313/posts/city-accountability/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/city-accountability/</guid>
       <description>Relationships and accountability in large population centers.</description>
     </item>
     <item>
-      <title>1. Financial Accounting - Part 1</title>
-      <link>http://localhost:1313/posts/financial-accounting-1/</link>
+      <title>Financial Accounting - Part 1</title>
+      <link>http://localhost:1313/whodathunk/posts/financial-accounting-1/</link>
       <pubDate>Thu, 27 Nov 2025 02:59:34 +0200</pubDate>
-      <guid>http://localhost:1313/posts/financial-accounting-1/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/financial-accounting-1/</guid>
       <description>Info collected on accounting while studying.</description>
     </item>
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:1313/whodathunk/posts/first-post/</link>
       <pubDate>Sat, 18 Oct 2025 15:08:49 +0300</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/first-post/</guid>
       <description>Syncing legacy OneDrive files: options and a Go CSV-driven copy script, plus tips for bulk transfer via a secondary PC and FreeFileSync. Includes sample code!!</description>
     </item>
     <item>
       <title>Theming this website</title>
-      <link>http://localhost:1313/posts/theming-hugo/</link>
+      <link>http://localhost:1313/whodathunk/posts/theming-hugo/</link>
       <pubDate>Sat, 18 Oct 2025 10:55:49 +0300</pubDate>
-      <guid>http://localhost:1313/posts/theming-hugo/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/theming-hugo/</guid>
       <description>Website&amp;rsquo;s theming info.</description>
     </item>
     <item>
       <title>Post 3</title>
-      <link>http://localhost:1313/posts/post-3/</link>
+      <link>http://localhost:1313/whodathunk/posts/post-3/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/posts/post-3/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/post-3/</guid>
       <description>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim.</description>
     </item>
     <item>
       <title>Post 2</title>
-      <link>http://localhost:1313/posts/post-2/</link>
+      <link>http://localhost:1313/whodathunk/posts/post-2/</link>
       <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/posts/post-2/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/post-2/</guid>
       <description>Anim eiusmod irure incididunt sint cupidatat. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum.</description>
     </item>
     <item>
       <title>Post 1</title>
-      <link>http://localhost:1313/posts/post-1/</link>
+      <link>http://localhost:1313/whodathunk/posts/post-1/</link>
       <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/posts/post-1/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/post-1/</guid>
       <description>Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod. Labore ut ea duis dolor. Incididunt consectetur proident qui occaecat incididunt do nisi Lorem.</description>
     </item>
   </channel>

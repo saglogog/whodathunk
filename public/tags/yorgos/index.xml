@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yorgos on WhoDaThunk</title>
-    <link>http://localhost:1313/tags/yorgos/</link>
+    <link>http://localhost:1313/whodathunk/tags/yorgos/</link>
     <description>Recent content in Yorgos on WhoDaThunk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Nov 2025 02:59:34 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/yorgos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/whodathunk/tags/yorgos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Financial Accounting - Part 1</title>
-      <link>http://localhost:1313/posts/financial-accounting-1/</link>
+      <link>http://localhost:1313/whodathunk/posts/financial-accounting-1/</link>
       <pubDate>Thu, 27 Nov 2025 02:59:34 +0200</pubDate>
-      <guid>http://localhost:1313/posts/financial-accounting-1/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/financial-accounting-1/</guid>
       <description>Info collected on accounting while studying.</description>
     </item>
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:1313/whodathunk/posts/first-post/</link>
       <pubDate>Sat, 18 Oct 2025 15:08:49 +0300</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/first-post/</guid>
       <description>Syncing legacy OneDrive files: options and a Go CSV-driven copy script, plus tips for bulk transfer via a secondary PC and FreeFileSync. Includes sample code!!</description>
     </item>
     <item>
       <title>Theming this website</title>
-      <link>http://localhost:1313/posts/theming-hugo/</link>
+      <link>http://localhost:1313/whodathunk/posts/theming-hugo/</link>
       <pubDate>Sat, 18 Oct 2025 10:55:49 +0300</pubDate>
-      <guid>http://localhost:1313/posts/theming-hugo/</guid>
+      <guid>http://localhost:1313/whodathunk/posts/theming-hugo/</guid>
       <description>Website&amp;rsquo;s theming info.</description>
     </item>
   </channel>

@@ -1,0 +1,574 @@
+<!doctype html>
+<html
+    lang="en-us"
+    dir="ltr"
+>
+    <head><script src="/whodathunk/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=whodathunk/livereload" data-no-instant defer></script>
+        <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+    Cramming Econometry | WhoDaThunk
+</title>
+
+    <link rel="stylesheet" href="/whodathunk/css/main.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+ 
+      <script src="/whodathunk/js/main.js"></script>
+ 
+
+    </head>
+    <body>
+        <header><h1 class="title">WhoDaThunk</h1>
+
+  <nav class="main">
+    <ul class="mainMenu">
+    <li class="mainMenu">
+      <a class="mainMenu" href="/whodathunk/">Home</a>
+    </li>
+    <li class="mainMenu">
+      <a class="mainMenu" href="/whodathunk/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+</header>
+        <div><div class="hero-container">
+    <p class="hero-text">A better life starts in Knowledge.</p>
+</div>
+</div>
+        <main>
+
+<div class="article-page-container">
+    <article>
+        <h1>Cramming Econometry</h1>
+
+         
+        <time datetime="2025-11-28T02:52:08&#43;02:00">November 28, 2025</time>
+
+        <p>This is a <strong>high-intensity, 2-hour cram plan</strong> designed to maximize your score based on the files you provided. Since you have a mix of MCQs and output-based exercises, we will split the time: <strong>60 minutes for Exercises (the heavy lifting)</strong> and <strong>45 minutes for MCQ Concepts</strong>, with <strong>15 minutes for final formula review</strong>.</p>
+<hr>
+<h3 id="part-1-mastering-the-exercises-60-minutes"><strong>PART 1: Mastering the Exercises (60 Minutes)</strong></h3>
+<p><strong>Goal:</strong> Be able to read the regression output and calculate t-stats, F-stats, and predictions immediately.</p>
+<h4 id="1-interpreting-the-coefficients-beta"><strong>1. Interpreting the Coefficients ($\beta$)</strong></h4>
+<p>You must look at the functional form (Logs vs. Linear) to interpret the results correctly.</p>
+<ul>
+<li>
+<p><strong>Linear-Linear ($y = \beta_1 + \beta_2 x$):</strong> A 1 unit increase in $x$ leads to a $\beta_2$ unit increase in $y$.</p>
+</li>
+<li>
+<p><strong>Log-Log ($\ln(y) = \beta_1 + \beta_2 \ln(x)$):</strong> A <strong>1%</strong> increase in $x$ leads to a <strong>$\beta_2$%</strong> increase in $y$ (Elasticity). 1111</p>
+</li>
+<li>
+<p><strong>Log-Linear ($\ln(y) = \beta_1 + \beta_2 x$):</strong> A 1 unit increase in $x$ leads to a <strong>($100 \times \beta_2$ )%</strong> increase in $y$ (Semi-elasticity). 2222</p>
+</li>
+<li>
+<p><strong>Linear-Log ($y = \beta_1 + \beta_2 \ln(x)$):</strong> A 1% increase in $x$ leads to a <strong>$(\beta_2 / 100)$</strong> unit increase in $y$. 3</p>
+</li>
+</ul>
+<p><strong>Tip:</strong> &ldquo;Ceteris Paribus&rdquo; (holding all other variables constant) is the key phrase for Multiple Regression interpretation. 4</p>
+<h4 id="2-hypothesis-testing-t-tests"><strong>2. Hypothesis Testing (t-tests)</strong></h4>
+<p>You will likely be asked to test if a coefficient equals a specific value (usually 0).</p>
+<ul>
+<li>
+<p><strong>Null Hypothesis ($H_0$):</strong> $\beta_k = c$ (usually $c=0$).</p>
+</li>
+<li>
+<p><strong>Formula:</strong><br>
+</p>
+$$t \= \\frac{\\text{Estimated Coefficient} \- \\text{Hypothesized Value}}{\\text{Standard Error}} \= \\frac{b\_k \- c}{se(b\_k)}$$<p><br>
+5555</p>
+</li>
+<li>
+<p><strong>Decision Rule (Large Sample/Normal):</strong></p>
+<ul>
+<li>If $|t| &gt; 1.96$, reject $H_0$ at 5% significance.</li>
+<li>If $|t| &gt; 2.58$, reject $H_0$ at 1% significance.</li>
+<li><strong>Shortcut:</strong> Look at the <strong>P-value</strong> column. If $p &lt; 0.05$, the variable is statistically significant (Reject $H_0$). 6</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-confidence-intervals"><strong>3. Confidence Intervals</strong></h4>
+<p>Constructing a 95% confidence interval for a coefficient.</p>
+<ul>
+<li><strong>Formula:</strong><br>
+$$\\text{Coefficient} \\pm (\\text{Critical Value} \\times \\text{Standard Error})$$</li>
+<li>For large samples (95%), use <strong>1.96</strong>.</li>
+<li><strong>Calculation:</strong> $\[b\_k \- 1.96 \\cdot se(b\_k), \\quad b\_k \+ 1.96 \\cdot se(b\_k)\]$ 7777</li>
+</ul>
+<h4 id="4-the-f-test-joint-hypotheses"><strong>4. The F-Test (Joint Hypotheses)</strong></h4>
+<p>Use this when testing if <strong>multiple</strong> coefficients are simultaneously zero (e.g., &ldquo;Test if $\beta_3 = 0$ AND $\beta_4 = 0$&rdquo;).</p>
+<ul>
+<li>
+<p>You need two models:</p>
+<ol>
+<li><strong>Unrestricted (U):</strong> The full model.</li>
+<li><strong>Restricted (R):</strong> The model <em>without</em> the variables you are testing.</li>
+</ol>
+</li>
+<li>
+<p>Formula (from Equations.pdf):</p>
+$$F \= \\frac{(SSE\_R \- SSE\_U)/J}{SSE\_U/(N-K)}$$<p><br>
+888</p>
+<ul>
+<li>$SSE_R$: Sum of Squared Errors (Restricted).</li>
+<li>$SSE_U$: Sum of Squared Errors (Unrestricted).</li>
+<li>$J$: Number of restrictions (variables removed).</li>
+<li>$N$: Sample size.</li>
+<li>$K$: Total number of coefficients in the Unrestricted model (including intercept).</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-prediction-watch-out-for-logs"><strong>5. Prediction (Watch out for Logs!)</strong></h4>
+<ul>
+<li>
+<p><strong>Linear Model:</strong> Simply plug the $x$ values into the estimated equation.</p>
+<ul>
+<li>$\hat{y} = b_1 + b_2(x_{new})$ 9</li>
+</ul>
+</li>
+<li>
+<p><strong>Log-Linear Model ($\ln(y) = \dots$):</strong></p>
+<ul>
+<li>
+<p>If calculating the <strong>expected $y$</strong> (not $\ln y$), you must correct for variance.</p>
+</li>
+<li>
+<p><strong>Corrected Predictor:</strong> $\hat{y}_c = \exp(\widehat{\ln y}) \times \exp(\hat{\sigma}^2/2)$ 10101010</p>
+</li>
+<li>
+<p><em>Where $\hat{\sigma}$ is the &ldquo;S.E. of regression&rdquo; from the output table.</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-dummy-variables"><strong>6. Dummy Variables</strong></h4>
+<ul>
+<li><strong>Intercept Dummy:</strong> Shifts the line up or down.
+<ul>
+<li><em>Example:</em> $Wage = \beta_1 + \beta_2 Male$. Male earns $\beta_2$ more than Female.</li>
+</ul>
+</li>
+<li><strong>Interaction Dummy ($D \times x$):</strong> Changes the <strong>slope</strong>.
+<ul>
+<li><em>Example:</em> $Wage = \beta_1 + \beta_2 Educ + \beta_3 (Male \times Educ)$.</li>
+<li>Returns to education for Females: $\beta_2$.</li>
+<li>Returns to education for Males: $\beta_2 + \beta_3$. 11111111</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="part-2-mcq-high-yield-concepts-45-minutes"><strong>PART 2: MCQ High-Yield Concepts (45 Minutes)</strong></h3>
+<p><strong>Goal:</strong> Recognize keywords for the 8 theory questions.</p>
+<h4 id="simple--multiple-regression-ch-2-5"><strong>Simple &amp; Multiple Regression (Ch 2, 5)</strong></h4>
+<ul>
+<li>
+<p><strong>OLS Goal:</strong> Minimizes the <strong>Sum of Squared Residuals (SSE)</strong>. 12</p>
+</li>
+<li>
+<p><strong>$R^2$ (Coefficient of Determination):</strong> The proportion of variation in $y$ explained by $x$. 13</p>
+<ul>
+<li>$R^2 = 1 - (SSE/SST)$. 14</li>
+</ul>
+</li>
+<li>
+<p><strong>Adjusted $R^2$:</strong> Used to compare models with <em>different numbers of variables</em>. It penalizes adding useless variables (unlike regular $R^2$ which never goes down). 15</p>
+</li>
+<li>
+<p><strong>Omitted Variable Bias:</strong> If you leave out a relevant variable correlated with $x$, your estimates are <strong>biased</strong>. 16161616</p>
+</li>
+<li>
+<p><strong>Multicollinearity:</strong> When $x$ variables are highly correlated.</p>
+<ul>
+<li>
+<p><em>Symptom:</em> High $R^2$ but <strong>insignificant t-tests</strong> (large standard errors). 17</p>
+</li>
+<li>
+<p><em>Consequence:</em> Hard to isolate individual effects, but <strong>prediction is still good</strong>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="hypothesis-testing-ch-3-6"><strong>Hypothesis Testing (Ch 3, 6)</strong></h4>
+<ul>
+<li>
+<p><strong>Type I Error:</strong> Rejecting $H_0$ when it is actually <strong>True</strong>. (Probability = $\alpha$). 18</p>
+</li>
+<li>
+<p><strong>Type II Error:</strong> Failing to reject $H_0$ when it is <strong>False</strong>. 19</p>
+</li>
+<li>
+<p><strong>P-value:</strong> The lowest significance level at which you can reject $H_0$. If p-value &lt; $\alpha$, Reject. 20</p>
+</li>
+<li>
+<p><strong>Chow Test:</strong> An F-test used to see if regression parameters are different between two groups (structural break). 21</p>
+</li>
+</ul>
+<h4 id="modeling-issues--diagnostics-ch-4-8"><strong>Modeling Issues &amp; Diagnostics (Ch 4, 8)</strong></h4>
+<ul>
+<li>
+<p><strong>Heteroskedasticity:</strong> The variance of the error term is <strong>not constant</strong> (it varies with $x$). 22</p>
+<ul>
+<li>
+<p><em>Consequence:</em> OLS is still unbiased, but standard errors are wrong (t-tests are invalid). 23</p>
+</li>
+<li>
+<p><em>Detection:</em> <strong>White Test</strong>, <strong>Breusch-Pagan Test</strong>. 24</p>
+</li>
+<li>
+<p><em>Fix:</em> Use <strong>White&rsquo;s Robust Standard Errors</strong> (HC standard errors) or Weighted Least Squares (WLS). 25</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Jarque-Bera Test:</strong> Tests if the error terms are <strong>Normally Distributed</strong>. 26</p>
+</li>
+<li>
+<p><strong>RESET Test:</strong> Tests for <strong>functional form misspecification</strong> (e.g., missing squares or interaction terms). 27</p>
+</li>
+<li>
+<p><strong>Forecasting Errors:</strong> Large errors occur when the sample size $N$ is small, or the new $x_0$ is far from the mean $\bar{x}$. 28</p>
+</li>
+</ul>
+<hr>
+<h3 id="part-3-final-check---the"><strong>PART 3: Final Check - The &ldquo;Cheat Sheet&rdquo; Strategy (15 Minutes)</strong></h3>
+<p><em>Open Equations.pdf and locate these specific formulas so you don&rsquo;t panic.</em></p>
+<ol>
+<li>
+<p><strong>Find the Variance formulas:</strong> Note that $Var(b_2)$ has $\Sigma(x-\bar{x})^2$ in the denominator. Larger spread in $x$ = Smaller Variance (Good). 29</p>
+</li>
+<li>
+<p><strong>Find the F-statistic formula:</strong> 30 - You will likely need the $(SSE_R - SSE_U)$ version.</p>
+</li>
+<li>
+<p><strong>Find the Prediction Interval:</strong> Notice the $+1$ inside the bracket for forecast variance (prediction is uncertain because of the error term $\epsilon$). 31</p>
+</li>
+</ol>
+<h3 id="quick-drill-self-test"><strong>Quick Drill (Self-Test):</strong></h3>
+<ol>
+<li>
+<p><strong>If $P &gt; |t|$ is 0.0000:</strong> Reject $H_0$. It is significant.</p>
+</li>
+<li>
+<p><strong>If $P &gt; |t|$ is 0.35:</strong> Do not reject. Not significant.</p>
+</li>
+<li>
+<p><strong>Positive coefficient on $x^2$:</strong> The curve is U-shaped (convex). 32</p>
+</li>
+<li>
+<p><strong>Dependent variable is $\ln(y)$:</strong> Remember to interpret coefficients as percentages (approx).</p>
+</li>
+</ol>
+<h2 id="part-4-paper-in-go">PART 4: Paper in go</h2>
+
+<details>
+  <summary>Εκφώνηση Εργασίας</summary>
+  <p><strong>Π.Μ.Σ. Λογιστική και Χρηματοοικονομική Ομαδική εργασία στα πλαίσια του μαθήματος Ανάλυση Δεδομένων στη Λογιστική και Χρηματοοικονομική</strong></p>
+<p><strong>Γενικές πληροφορίες</strong></p>
+<ul>
+<li>Η ομαδική εργασία εκπονείται από ομάδες φοιτητών μέχρι τρία μέλη το μέγιστο και θα πρέπει να έχει έκταση περίπου 2.500 λέξεις (χωρίς το παράρτημα). Αποκλίσεις +/- 15% στην έκταση της εργασίας είναι αποδεκτές.</li>
+<li>Μόνο ένα μέλος κάθε ομάδας φοιτητών χρειάζεται να υποβάλει την εργασία στο eclass πριν από την 23η Νοεμβρίου 2025, 23:59μ.μ. Αργοπορημένες υποβολές δεν γίνονται αποδεκτές.</li>
+<li>Η ομαδική εργασία είναι υποχρεωτική και διαμορφώνει σε ποσοστό 25% τον τελικό βαθμό του μαθήματος.</li>
+<li>Για την επιτυχή ολοκλήρωση του μαθήματος χρειάζεται προβιβάσιμος βαθμός στην τελική γραπτή εξέταση (&gt;=5).</li>
+<li>Ο τελικός βαθμός για το μάθημα υπολογίζεται ως: (75% * βαθμός γραπτής εξέτασης) + (25% * βαθμός ομαδικής εργασίας).</li>
+</ul>
+<p><strong>Θέμα εργασίας: Εκτίμηση ενός γραμμικού μοντέλου παλινδρόμησης – CAPM</strong></p>
+<ol>
+<li><strong>Χρησιμοποιήστε το αρχείο project data.xlsx</strong> που είναι αναρτημένο στο eclass:</li>
+</ol>
+<ul>
+<li><strong>A.</strong> Επιλέξετε μηνιαίες τιμές του δείκτη <strong>US Market Index</strong> (φύλλο εργασίας: index) και υπολογίστε τις λογαριθμικές διαφορές για να κατασκευάσετε τις αποδόσεις του δείκτη $R_M$.</li>
+<li><strong>B.</strong> Στη συνέχεια διαλέξτε μία εισηγμένη εταιρεία της επιλογής σας που βρίσκεται στο αρχείο (φύλλο εργασίας: stocks) και υπολογίστε τις λογαριθμικές διαφορές για να κατασκευάσετε τις αποδόσεις της μετοχής $R_i$.</li>
+<li><strong>C.</strong> Επιλέξετε τις μηνιαίες τιμές για το χωρίς κίνδυνο επιτόκιο (<strong>risk-free rate, $R_f$</strong>) ως το <strong>U.S. Treasury bill 3-month</strong> (φύλλο εργασίας: risk free). Διαιρέστε το ετησιοποιημένο επιτόκιο που κατεβάσατε με το 12 για να υπολογίσετε το μηνιαίο επιτόκιο χωρίς κίνδυνο.</li>
+<li><strong>D.</strong> Κρατήστε τα ιστορικά δεδομένα μόνο για τη κοινή περίοδο που είναι διαθέσιμα και για τις τρεις μεταβλητές που κατεβάσατε, δηλαδή (i) δείκτη, (ii) μετοχής, (iii) επιτοκίου χωρίς κίνδυνο.</li>
+</ul>
+<ol start="2">
+<li>
+<p><strong>Υπολογίστε τις υπερβάλλουσες αποδόσεις</strong> της μετοχής και του δείκτη ως $ER_{i,t} = R_{i,t} - R_{f,t-1}$ και $ER_{M,t} = R_{M,t} - R_{f,t-1}$. Παρατηρήστε ότι το επιτόκιο χωρίς κίνδυνο αναφέρεται στην προηγούμενη περίοδο (t-1) από αυτή των αποδόσεων του δείκτη και της μετοχής (t).</p>
+</li>
+<li>
+<p><strong>Εκτιμήστε το Υπόδειγμα Αποτίμησης Κεφαλαιακών Περιουσιακών Στοιχείων (Capital Asset Pricing Model, CAPM)</strong> σύμφωνα με την παρακάτω εξίσωση παλινδρόμησης (όπου Y είναι η μεταβλητή $ER_{i,t}$ και Χ είναι η μεταβλητή $ER_{M,t}$):</p>
+</li>
+</ol>
+$$ER\_{i,t} \= \\alpha \+ \\beta ER\_{M,t} \+ \\epsilon\_t$$<ol start="4">
+<li>
+<p><strong>Σχολιάστε τα μεγέθη και τα πρόσημα των εκτιμημένων συντελεστών $\alpha$ και $\beta$</strong>. Είναι η μετοχή επιθετική ή αμυντική;</p>
+</li>
+<li>
+<p><strong>Σχολιάστε το συντελεστή προσδιορισμού της παλινδρόμησης $R^2$</strong> και σχολιάστε τον από κοινού έλεγχο στατιστικής σημαντικότητας (F-test).</p>
+</li>
+<li>
+<p><strong>Σχολιάστε εάν οι εκτιμημένοι συντελεστές είναι στατιστικά σημαντικοί</strong> σε επίπεδο σημαντικότητας 5% (t-statistic).</p>
+</li>
+<li>
+<p><strong>Ελέγξτε την από κοινού υπόθεση ότι $\alpha = 0, \beta = 1$</strong> σε 5% επίπεδο σημαντικότητας. Τι συμπέρασμα προκύπτει από το αποτέλεσμα του ελέγχου;</p>
+</li>
+<li>
+<p><strong>Ελέγξτε τα κατάλοιπα της παλινδρόμησης για παραβίαση των παραδοχών της ομοσκεδαστικότητας και της μη-αυτοσυσχέτισης</strong> και αναφέρετε τυχόν παραβιάσεις. Εκτιμήστε ξανά τη γραμμική παλινδρόμηση εκτιμώντας τυπικά σφάλματα επιλέγοντας τη κατάλληλη διόρθωση (White ή Newey-West) και σχολιάστε τις όποιες διαφορές.</p>
+</li>
+<li>
+<p><strong>Δημιουργείστε μία ψευδομεταβλητή για θετικές και αρνητικές αποδόσεις της αγοράς</strong>. Δηλαδή η ψευδομεταβλητή ($DUMMY_M$) θα παίρνει την τιμή 1 όταν $R_{M,t} &gt; 0$ και την τιμή 0 όταν $R_{M,t} \le 0$ (για ευκολία μπορείτε να χρησιμοποιήσετε το excel για τη δημιουργία της ψευδομεταβλητής κάνοντας χρήση της συνάρτησης IF). Στη συνέχεια εκτιμήστε την ακόλουθη παλινδρόμηση:</p>
+</li>
+</ol>
+$$ER\_{i,t} \= \\alpha \+ \\beta\_1 DUMMY\_M \+ \\beta\_2 DUMMY\_M \\cdot ER\_{M,t} \+ \\beta\_3 ER\_{M,t} \+ \\epsilon\_t$$</details>
+
+
+<details>
+  <summary>Εργασία σε κώδικα</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#75715e">// Στα πλαίσια της μεθοδολογικής τεκμηρίωσης της εργασίας και</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// πέραν της χρήσης του στατιστικού πακέτου EViews 12, αναπτύχθηκε συμπληρωματικά αλγόριθμος γραμμικής παλινδρόμησης στη γλώσσα προγραμματισμού Go (Golang).</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Ο κώδικας, ο οποίος παρατίθεται αναλυτικά στο παρόν Παράρτημα, δημιουργήθηκε για τους εξής σκοπούς:</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 1. Επαλήθευση Αποτελεσμάτων: Ο κώδικας υπολογίζει εκ νέου τους συντελεστές α και β του υποδείγματος CAPM,</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// καθώς και τα στατιστικά μεγέθη $R^2$ και F-statistic, επιβεβαιώνοντας την ακρίβεια των αποτελεσμάτων που παρήγαγε το EViews.</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 2. Αλγοριθμική Διαφάνεια: Μέσω της συνάρτησης calculateLinearRegression και calculateFTestForModelSignificance που περιλαμβάνονται στο αρχείο capm.go,</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// αποτυπώνεται η μαθηματική διαδικασία των Ελαχίστων Τετραγώνων (OLS) βήμα προς βήμα, χωρίς τη χρήση &#34;black-box&#34; συναρτήσεων,</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// αποδεικνύοντας την εις βάθος κατανόηση του υπολογιστικού υποβάθρου του μοντέλου.</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;encoding/csv&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;io&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// returns a single column of numbers from a csv file</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">floatReader</span>(<span style="color:#a6e22e">file</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">recordColumn</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">startRow</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// use os.ReadFile to load the file into memory</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Be careful with the os.ReadFile because it reads the whole file into memory.</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">file</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// `b` contains everything your file has.</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// This writes it to the Standard Out.</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// os.Stdout.Write(b)</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// read from csv - we convert the byte input from the file to string</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// added reader r configuration to use ; instead of , for comma</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">csv</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(string(<span style="color:#a6e22e">b</span>)))
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Comma</span> = <span style="color:#e6db74">&#39;;&#39;</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">columnSlice</span> []<span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">index</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">index</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">record</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Read</span>()
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">EOF</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">index</span> &gt; <span style="color:#a6e22e">startRow</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">ParseFloat</span>(<span style="color:#a6e22e">record</span>[<span style="color:#a6e22e">recordColumn</span>], <span style="color:#ae81ff">64</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">columnSlice</span> = append(<span style="color:#a6e22e">columnSlice</span>, <span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// fmt.Print(x)</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// fmt.Println(record)</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">columnSlice</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// calculate slope b and y-intercept a for simple linear regression (SLR)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">calculateLinearRegression</span>(<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span> []<span style="color:#66d9ef">float64</span>) (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sumX</span>, <span style="color:#a6e22e">sumY</span>, <span style="color:#a6e22e">meanX</span>, <span style="color:#a6e22e">meanY</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// y=a+bx: regression equation</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// assuming len(x) == len(y)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">xValue</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sumX</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">xValue</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sumY</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">y</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">meanX</span> = <span style="color:#a6e22e">sumX</span> <span style="color:#f92672">/</span> float64(len(<span style="color:#a6e22e">x</span>))
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">meanY</span> = <span style="color:#a6e22e">sumY</span> <span style="color:#f92672">/</span> float64(len(<span style="color:#a6e22e">y</span>))
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bNumerator</span>, <span style="color:#a6e22e">bDenominator</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">xValue</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">bNumerator</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">xValue</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">meanX</span>) <span style="color:#f92672">*</span> (<span style="color:#a6e22e">y</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">meanY</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">bDenominator</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>((<span style="color:#a6e22e">xValue</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">meanX</span>), <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// y=a+bx: regression equation</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">b</span> = <span style="color:#a6e22e">bNumerator</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">bDenominator</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">a</span> = <span style="color:#a6e22e">meanY</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span><span style="color:#f92672">*</span><span style="color:#a6e22e">meanX</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// HELPER - Calculate Sums of squares (total, regression, error): SST, SSR, SSE for simple linear regression</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// SST: Sum of squared differences between the observed dependent variables and the overall mean. SST measures the total variability of a dataset.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// SSR: or explained SoS -Sum of squared differences between predicted value and mean of dependent variable. It describes how well our line fits the data.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// SSE: or residual(unexplained) SoS, the difference between the observed and predicted values. Regres. Analys. aims to minimize SSE - </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// smaller SSE, better prediction power.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// SST = SSR + SSE</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">calculateSoS</span>(<span style="color:#a6e22e">LR_a</span>, <span style="color:#a6e22e">LR_b</span> <span style="color:#66d9ef">float64</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span> []<span style="color:#66d9ef">float64</span>) (<span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">ssr</span>, <span style="color:#a6e22e">sse</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// SST = Sum[(y_i - meanY)^2]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// SSR = Sum[(predicted_y_i - meanY)^2]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// SSE = Sum[(ε_i)^2] = Sum[(y_i - predicted_y_i )^2]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// predicted_yi = a + b*xi (y=a+bx: regression equation)</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">predicted_y_i</span>, <span style="color:#a6e22e">sum_y</span>, <span style="color:#a6e22e">mean_y</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">predicted_y</span> []<span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// sample = len(x)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">x_i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// calculate y_i</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">predicted_y_i</span> = <span style="color:#a6e22e">LR_a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">LR_b</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x_i</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">predicted_y</span> = append(<span style="color:#a6e22e">predicted_y</span>, <span style="color:#a6e22e">predicted_y_i</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// calculate sum</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sum_y</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">y</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// calculate sample mean y</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mean_y</span> = <span style="color:#a6e22e">sum_y</span> <span style="color:#f92672">/</span> float64(len(<span style="color:#a6e22e">y</span>))
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// calculate SSR and SST</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">predicted_y</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ssr</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>((<span style="color:#a6e22e">predicted_y</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">mean_y</span>), <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sst</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>((<span style="color:#a6e22e">y</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">mean_y</span>), <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sse</span> = <span style="color:#a6e22e">sst</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">ssr</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">ssr</span>, <span style="color:#a6e22e">sse</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">calculateRSquared</span>(<span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">ssr</span> <span style="color:#66d9ef">float64</span>) (<span style="color:#a6e22e">rSquared</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// R^2 = SSR/SST</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// calculate R squared</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">rSquared</span> = <span style="color:#a6e22e">ssr</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">sst</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">rSquared</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Calculate F-statistic for SLR. This tests the joint null hypothesis - all slope coefficients (=0)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	// F-statistic measures overall model significance - do the independent variables</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// explain a significant portion of the variation in the dependent variable?</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	// J = no of restrictions, N = no of observations(sample), K = no of coefficients(b)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	// The larger the F-statistic, the stronger the predicitive power of the explanatory variables jointly.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	// The Prob(F-statistic) is the p-value associated with the F-test. Returns the probability that a larger F-stat. is returned (of H0 == true).</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// If Prob(F-statistic) &lt; 0.05, the model is statistically significant at the 5% level.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">calculateFTestGeneral</span>(<span style="color:#a6e22e">sse_r</span>, <span style="color:#a6e22e">sse_u</span> <span style="color:#66d9ef">float64</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">f_value</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// SSE = SST-SSR</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// General: F = [(SSE_R - SSE_U) / J] / [SSE_U / (N-K)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Simplified: F = [(SST - SSE) / (K-1)] / [SSE / (N-K)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// J = no of restrictions, N = no of observations, K = no of coefficients</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// calculate</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">f_value</span> = ((<span style="color:#a6e22e">sse_r</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">sse_u</span>) <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">j</span>)) <span style="color:#f92672">/</span> (<span style="color:#a6e22e">sse_u</span> <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#a6e22e">k</span>))
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">f_value</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Simplified: F = [(SST - SSE) / (K-1)] / [SSE / (N-K)]</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// J = no of restrictions, N = no of observations, K = no of coefficients</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">calculateFTestForModelSignificance</span>(<span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">sse</span> <span style="color:#66d9ef">float64</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">f_value</span> <span style="color:#66d9ef">float64</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// SSE = SST-SSR</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// General: F = [(SSE_R - SSE_U) / J] / [SSE_U / (N-K)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Simplified: F = [(SST - SSE) / (K-1)] / [SSE / (N-K)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// J = no of restrictions, N = no of observations, K = no of coefficients</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// calculate</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">f_value</span> = ((<span style="color:#a6e22e">sst</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">sse</span>) <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)) <span style="color:#f92672">/</span> (<span style="color:#a6e22e">sse</span> <span style="color:#f92672">/</span> float64(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#a6e22e">k</span>))
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">f_value</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">excessMSFT</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">floatReader</span>(<span style="color:#e6db74">&#34;project_data/excess-473.csv&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">excessMrkt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">floatReader</span>(<span style="color:#e6db74">&#34;project_data/excess-473.csv&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">calculateLinearRegression</span>(<span style="color:#a6e22e">excessMSFT</span>, <span style="color:#a6e22e">excessMrkt</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">ssr</span>, <span style="color:#a6e22e">sse</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">calculateSoS</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">excessMSFT</span>, <span style="color:#a6e22e">excessMrkt</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">R2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">calculateRSquared</span>(<span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">ssr</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fstat</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">calculateFTestForModelSignificance</span>(<span style="color:#a6e22e">sst</span>, <span style="color:#a6e22e">sse</span>, <span style="color:#ae81ff">473</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(len(<span style="color:#a6e22e">excessMSFT</span>), <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">R2</span>, <span style="color:#a6e22e">fstat</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	}
+</span></span></code></pre></div></details>
+
+ 
+
+    </article>
+    
+    <div class="toc">
+        <p>Table of contents</p>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#part-1-mastering-the-exercises-60-minutes"><strong>PART 1: Mastering the Exercises (60 Minutes)</strong></a>
+          <ul>
+            <li><a href="#1-interpreting-the-coefficients-beta"><strong>1. Interpreting the Coefficients ($\beta$)</strong></a></li>
+            <li><a href="#2-hypothesis-testing-t-tests"><strong>2. Hypothesis Testing (t-tests)</strong></a></li>
+            <li><a href="#3-confidence-intervals"><strong>3. Confidence Intervals</strong></a></li>
+            <li><a href="#4-the-f-test-joint-hypotheses"><strong>4. The F-Test (Joint Hypotheses)</strong></a></li>
+            <li><a href="#5-prediction-watch-out-for-logs"><strong>5. Prediction (Watch out for Logs!)</strong></a></li>
+            <li><a href="#6-dummy-variables"><strong>6. Dummy Variables</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#part-2-mcq-high-yield-concepts-45-minutes"><strong>PART 2: MCQ High-Yield Concepts (45 Minutes)</strong></a>
+          <ul>
+            <li><a href="#simple--multiple-regression-ch-2-5"><strong>Simple &amp; Multiple Regression (Ch 2, 5)</strong></a></li>
+            <li><a href="#hypothesis-testing-ch-3-6"><strong>Hypothesis Testing (Ch 3, 6)</strong></a></li>
+            <li><a href="#modeling-issues--diagnostics-ch-4-8"><strong>Modeling Issues &amp; Diagnostics (Ch 4, 8)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#part-3-final-check---the"><strong>PART 3: Final Check - The “Cheat Sheet” Strategy (15 Minutes)</strong></a></li>
+        <li><a href="#quick-drill-self-test"><strong>Quick Drill (Self-Test):</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#part-4-paper-in-go">PART 4: Paper in go</a></li>
+  </ul>
+</nav>
+    </div>
+    
+</div>
+
+</main>
+        <footer><p class="footer">
+    Copyright <b>ME</b> 2025. All rights reserved. Built with&nbsp;
+</p>
+<p></p>
+<p style="color: #f54d89">H</p>
+<p style="color: #3892c9">U</p>
+<p style="color: #4cb891">G</p>
+<p style="color: #e5ba57">O</p>
+<p>&nbsp;SSG.</p>
+</footer>
+    </body>
+</html>

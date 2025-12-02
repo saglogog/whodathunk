@@ -23,6 +23,8 @@ table {
     border-collapse: collapse;
     border-top: 1px solid #999999;
     border-bottom: 1px solid #999999;
+    /* solving overflowing tables in mobile, although it adds ugly borders over and under tables
+    https://stackoverflow.com/questions/25296479/how-to-get-overflowauto-behavior-with-html-table*/
     display: block;
     overflow: auto;
 }

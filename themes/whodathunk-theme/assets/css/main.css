@@ -33,6 +33,7 @@ td {
     /*align-items: left;*/
     border-collapse: collapse;
     overflow: auto;
+    background-color: red;
 }
 
 header {

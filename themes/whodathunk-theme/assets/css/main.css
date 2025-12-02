@@ -23,7 +23,8 @@ table {
     border-collapse: collapse;
     border-top: 1px solid #999999;
     border-bottom: 1px solid #999999;
-    overflow: auto;
+    display: block;
+    overflow: scroll;
 }
 th,
 td {
@@ -32,8 +33,7 @@ td {
     padding: 0.3em;
     /*align-items: left;*/
     border-collapse: collapse;
-    overflow: auto;
-    background-color: red;
+    background-color: yellow;
 }
 
 header {

@@ -18,6 +18,7 @@ h3 {
 /*https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables*/
 table {
     table-layout: fixed;
+    /*table-layout: auto;*/
     /*width: 90%;*/
     margin: 10px auto;
     border-collapse: collapse;
@@ -25,7 +26,7 @@ table {
     border-bottom: 1px solid #999999;
     /* solving overflowing tables in mobile, although it adds ugly borders over and under tables
     https://stackoverflow.com/questions/25296479/how-to-get-overflowauto-behavior-with-html-table*/
-    display: inline-block;
+    display: block;
     overflow: auto;
 }
 th,

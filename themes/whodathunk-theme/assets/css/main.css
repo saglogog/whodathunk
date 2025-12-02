@@ -24,7 +24,7 @@ table {
     border-top: 1px solid #999999;
     border-bottom: 1px solid #999999;
     display: block;
-    overflow: scroll;
+    overflow: auto;
 }
 th,
 td {
@@ -33,7 +33,6 @@ td {
     padding: 0.3em;
     /*align-items: left;*/
     border-collapse: collapse;
-    background-color: yellow;
 }
 
 header {
